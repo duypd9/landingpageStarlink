@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Starlink by Viettel - Internet Vệ Tinh Siêu Tốc</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --deep-sea: #050A14;
+            --viettel-red: #EE0033;
+            --neon-blue: #00F2FF;
+        }
+
+        body {
+            background-color: var(--deep-sea);
+            color: #ffffff;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        .hero-gradient {
+            background: linear-gradient(180deg, rgba(5,10,20,0.2) 0%, rgba(5,10,20,1) 90%), 
+                        url('https://images.unsplash.com/photo-1500514966906-fe245eea9344?auto=format&fit=crop&q=80&w=2072');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .btn-viettel {
+            background-color: var(--viettel-red);
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .btn-viettel:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 25px rgba(238, 0, 51, 0.5);
+        }
+        .btn-viettel-login {
+            background-color: #ffffff;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .btn-viettel-login:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 25px rgba(238, 0, 51, 0.5);
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .sos-button {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            z-index: 999;
+        }
+
+        .sos-button button, .sos-button a {
+            animation: pulse-circle 2s infinite;
+        }
+
+        /* Cập nhật animation để shadow bo tròn theo nút */
+        @keyframes pulse-circle {
+            0% { 
+                transform: scale(1); 
+                box-shadow: 0 0 0 0 rgba(238, 0, 51, 0.7); 
+            }
+            70% { 
+                transform: scale(1.05); 
+                box-shadow: 0 0 0 20px rgba(238, 0, 51, 0); 
+            }
+            100% { 
+                transform: scale(1); 
+                box-shadow: 0 0 0 0 rgba(238, 0, 51, 0); 
+            }
+        }
+
+        .feature-card:hover {
+            background: rgba(255, 255, 255, 0.07);
+            border-color: var(--neon-blue);
+        }
+
+        .price-table-container {
+            overflow-x: auto;
+        }
+
+        .price-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.9rem;
+        }
+
+        .price-table th {
+            background-color: var(--viettel-red);
+            color: white;
+            text-align: center;
+            padding: 1rem;
+            text-transform: uppercase;
+        }
+
+        .price-table td {
+            padding: 1rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
+        }
+
+        .price-table tr:nth-child(even) {
+            background-color: rgba(255, 255, 255, 0.02);
+        }
+
+        .highlight-text {
+            color: var(--neon-blue);
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body class="overflow-x-hidden">
+
+    <!-- 1. Header & Hero Section -->
+    <nav class="fixed w-full z-50 glass-card px-6 py-4">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <div class="flex items-center gap-2">
+                <div class="col-span-2 space-y-6 rounded">
+                    <img src="https://cdn.phototourl.com/free/2026-05-05-e153168f-4856-41a7-8a7c-4ca07d590881.png" class="h-10 brightness-100 rounded " alt="logo">
+                </div>
+                <span class="text-xl font-bold tracking-widest hidden sm:inline ml-2 uppercase">STARLINK</span>
+            </div>
+            <div class="hidden lg:flex gap-8 text-xs font-bold uppercase tracking-widest">
+                <a href="#solutions" class="hover:text-red-600 transition">Giải pháp</a>
+                <a href="#pricing-hardware" class="hover:text-red-600 transition">Gói thiết bị</a>
+                <a href="#pricing-service" class="hover:text-red-600 transition">Gói dịch vụ</a>
+                <a href="#faq" class="hover:text-red-600 transition">Hỏi đáp</a>
+            </div>
+            <div class="flex gap-4">
+                <a href="#contact" class="btn-viettel px-6 py-2 rounded font-bold text-sm text-white text-center">TƯ VẤN NGAY</a>
+                <a href="https://duypd9.github.io/Viettel_Starlink/" class="btn-viettel-login px-6 py-2 rounded font-bold text-red-600 text-sm border border-red-600">ĐĂNG NHẬP</a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="relative min-h-screen flex items-center justify-center pt-20 hero-gradient px-6 text-center">
+        <div class="max-w-5xl z-10">
+            <div class="inline-block px-4 py-1 bg-cyan-500/20 text-cyan-400 border border-cyan-400 rounded mb-6 text-xs font-bold tracking-widest uppercase">
+                GIẢI PHÁP INTERNET VỆ TINH TẦM THẤP
+            </div>
+            <h1 class="text-5xl md:text-8xl font-black mb-6 leading-none uppercase whitespace-nowrap">
+                Starlink <span class="text-red-600">BY VIETTEL</span>
+            </h1>
+            <p class="text-xl md:text-3xl font-light mb-4 text-gray-200">Internet Vệ Tinh Siêu Tốc</p>
+            <p class="text-lg text-gray-400 mb-10 max-w-2xl mx-auto whitespace-nowrap">
+                Kết nối không giới hạn địa hình. Tốc độ ổn định lên tới 220Mbp trong thời tiết khắc nghiệt.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="#contact" class="btn-viettel px-8 py-4 rounded font-bold text-lg uppercase text-white">Liên hệ tư vấn</a>
+                <a href="#pricing-hardware" class="bg-white/10 hover:bg-white/20 border border-white/20 px-8 py-4 rounded font-bold text-lg transition uppercase text-white">Gói thiết bị</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- 2. Block: Thấu hiểu nỗi đau (The Pain Points) -->
+    <section id="painpoints" class="py-24 px-6 bg-[#03070d]">
+        <div class="max-w-7xl mx-auto">
+            <div class="mb-16">
+                <h2 class="text-3xl md:text-5xl font-black uppercase mb-4">Tại sao giải pháp cũ<br><span class="text-red-600">không còn phù hợp?</span></h2>
+                <div class="h-1 w-32 bg-red-600"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="glass-card p-8 rounded-xl border-t-4 border-t-red-600 feature-card transition duration-300">
+                    <i class="fas fa-solid fa-link-slash text-3xl mb-6 text-red-500"></i>
+                    <h3 class="font-bold text-xl mb-4 uppercase">Mất liên lạc</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">Mạng vệ tinh truyền thống chỉ nhắn được vài dòng chữ, còn video call là điều xa xỉ?</p>
+                </div>
+                <div class="glass-card p-8 rounded-xl border-t-4 border-t-red-600 feature-card transition duration-300">
+                    <i class="fas fa-money-bill-wave text-3xl mb-6 text-red-500"></i>
+                    <h3 class="font-bold text-xl mb-4 uppercase">Chi phí cao</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">Chi trả hàng chục triệu đồng mỗi tháng cho dung lượng ít ỏi và tốc độ rùa bò?</p>
+                </div>
+                <div class="glass-card p-8 rounded-xl border-t-4 border-t-red-600 feature-card transition duration-300">
+                    <i class="fas fa-eye-slash text-3xl mb-6 text-red-500"></i>
+                    <h3 class="font-bold text-xl mb-4 uppercase">Quản lý mù mờ</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">Không biết tàu đang ở đâu, thiết bị có đang hoạt động ổn định hay không?</p>
+                </div>
+                <div class="glass-card p-8 rounded-xl border-t-4 border-t-red-600 feature-card transition duration-300">
+                    <i class="fas fa-biohazard text-3xl mb-6 text-red-500"></i>
+                    <h3 class="font-bold text-xl mb-4 uppercase">Dễ hư hỏng</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">Muối biển và bão lớn làm hỏng hệ thống liên lạc đắt tiền của bạn?</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. Block: Giải pháp "Đặc trị" (The Solution) -->
+    <section id="solutions" class="py-24 px-6 bg-white text-gray-900">
+        <div class="max-w-7xl mx-auto flex flex-col lg:flex-row gap-16 items-center">
+            <div class="lg:w-1/2">
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="bg-gray-100 p-6 rounded-2xl text-center">
+                        <img src="https://cdn.phototourl.com/free/2026-05-04-7dfd3a1d-323b-4ad8-87df-3cf3e0068550.png" 
+                        class="rounded-lg mb-4 mx-auto h-32 object-contain hover:scale-[1.02]" 
+                        alt="Mini Kit">                    
+                        
+                        <p class="font-bold">Mini Kit</p>
+                        <p class="text-sm text-gray-500">Dành cho Tàu cá</p>
+                    </div>
+                    <div class="bg-gray-100 p-6 rounded-2xl text-center">
+                        <img src="https://cdn.phototourl.com/free/2026-05-04-d3243e9a-a657-4319-8dad-c961190f9b5f.png" 
+                        class="rounded-lg mb-4 mx-auto h-32 object-contain hover:scale-[1.02]" 
+                        alt="Standard Kit">
+                        <p class="font-bold">Standard Kit</p>
+                        <p class="text-sm text-gray-500">Dành cho Khu du lịch trên đảo/ ven biển/ vùng sâu vùng xa</p>
+                    </div>
+                    <div class="bg-gray-100 p-6 rounded-2xl text-center col-span-2">
+                        <img src="https://cdn.phototourl.com/free/2026-05-04-a3c2caa9-b89d-47f7-8ba6-cb89dc88dd96.png" 
+                        class="rounded-lg mb-4 mx-auto h-32 object-contain hover:scale-[1.02]" 
+                        alt="Standard Kit">
+                        <p class="font-bold mb-2">Gen 3 Performance Kit</p>
+                        <p class="text-sm text-gray-500">Dành cho Giàn khoan & Tàu viễn dương</p>
+                    </div>
+                </div>
+            </div>
+            <div class="lg:w-1/2">
+                <h2 class="text-4xl md:text-5xl font-black mb-8 leading-tight uppercase">Starlink Internet <br><span class="text-red-600"> Thiết lập tiêu chuẩn kết nối mới </span></h2>
+                <div class="space-y-8">
+                    <div class="flex gap-6">
+                        <div class="bg-red-100 p-4 rounded-full h-fit text-red-600"><i class="fas fa-tv text-2xl"></i></div>
+                        <div>
+                            <h4 class="font-bold text-xl uppercase mb-2">Băng thông chuẩn 4K</h4>
+                            <p class="text-gray-600">Thoải mái gọi Video Call về gia đình, xem YouTube, Livestream hoặc họp trực tuyến ngay trên boong tàu.</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-6">
+                        <div class="bg-red-100 p-4 rounded-full h-fit text-red-600"><i class="fas fa-wind text-2xl"></i></div>
+                        <div>
+                            <h4 class="font-bold text-xl uppercase mb-2">Chịu bão trên 280km/h</h4>
+                            <p class="text-gray-600">Anten công nghệ mảng pha chống ăn mòn muối biển tiêu chuẩn công nghiệp, vận hành bền bỉ dưới mọi thời tiết.</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-6">
+                        <div class="bg-red-100 p-4 rounded-full h-fit text-red-600"><i class="fas fa-bolt text-2xl"></i></div>
+                        <div>
+                            <h4 class="font-bold text-xl uppercase mb-2">Quản lý chuyên nghiệp</h4>
+                            <p class="text-gray-600">Địa chỉ IP công cộng và bảng điều khiển quản trị tập trung dành riêng cho doanh nghiệp hàng hải.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. Gói Thiết Bị (Hardware Pricing) -->
+    <section id="pricing-hardware" class="py-24 px-6 bg-[#050A14]">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-black uppercase mb-4 text-white">Gói thiết bị <span class="text-red-600">Starlink</span></h2>
+                <div class="h-1 w-24 bg-red-600 mx-auto mb-6"></div>
+            </div>
+            
+            <div class="price-table-container glass-card rounded-2xl overflow-hidden">
+                <table class="price-table">
+                    <thead>
+                        <tr>
+                            <th>TT</th>
+                            <th>Loại thiết bị</th>
+                            <th>Giá Thiết bị (VNĐ)</th>
+                            <th>Phí hàng tháng Global</th>
+                            <th>Phí hàng tháng Local</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td class="font-bold">Mini Kit</td>
+                            <td class="highlight-text">12.000.000</td>
+                            <td>4.050.000</td>
+                            <td>600.000</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td class="font-bold">Standard Kit</td>
+                            <td class="highlight-text">12.500.000</td>
+                            <td>4.050.000</td>
+                            <td>600.000</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td class="font-bold">Gen 3 Performance</td>
+                            <td class="highlight-text">60.990.000</td>
+                            <td>4.050.000</td>
+                            <td>600.000</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
+                <div class="p-6 bg-white/5 rounded-xl border border-white/10 text-center">
+                    <p class="text-xs uppercase text-gray-500 mb-2">Mini KIT - Sử dụng cho</p>
+                    <p class="font-bold">TÀU CÁ NHỎ</p>
+                    <p class="text-sm text-gray-400 mt-2">Dễ dàng lắp đặt, gọn nhẹ</p>
+                </div>
+                <div class="p-6 bg-white/5 rounded-xl border border-white/10 text-center">
+                    <p class="text-xs uppercase text-gray-500 mb-2">Standart kit - Sử dụng cho</p>
+                    <p class="font-bold text-cyan-400">KHU DU LỊCH/VEN BIỂN</p>
+                    <p class="text-sm text-gray-400 mt-2">Dùng cố định hoặc di động ven bờ</p>
+                </div>
+                <div class="p-6 bg-white/5 rounded-xl border border-white/10 text-center">
+                    <p class="text-xs uppercase text-gray-500 mb-2">Performance Kit - Sử dụng cho</p>
+                    <p class="font-bold text-red-500">GIÀN KHOAN/VIỄN DƯƠNG</p>
+                    <p class="text-sm text-gray-400 mt-2">Ưu tiên băng thông cao nhất</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. Gói Dịch Vụ (Service Pricing) -->
+    <section id="pricing-service" class="py-24 px-6 bg-white text-gray-900">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-black uppercase mb-4">Gói dịch vụ <span class="text-red-600">Linh hoạt</span></h2>
+                <div class="h-1 w-24 bg-red-600 mx-auto"></div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
+                <div class="p-8 bg-gray-100 rounded-2xl border-l-8 border-cyan-500 shadow-lg">
+                    <h3 class="text-2xl font-black mb-4 flex items-center gap-3">
+                        <i class="fas fa-map-marker-alt text-cyan-500"></i> LOCAL PRIORITY
+                    </h3>
+                    <ul class="space-y-3 text-sm text-gray-600">
+                        <li><i class="fas fa-check text-cyan-500 mr-2"></i> Sử dụng trên đất liền trong 1 quốc gia (<span class="font-bold text-gray-900">&lt;12 hải lý</span>)</li>
+                        <li><i class="fas fa-check text-cyan-500 mr-2"></i> Ưu tiên băng thông nội địa.</li>
+                        <li><i class="fas fa-check text-cyan-500 mr-2"></i> Sử dụng ổn định tại chỗ và khi di chuyển.</li>
+                        <li><i class="fas fa-check text-cyan-500 mr-2"></i> Địa chỉ IP công cộng và bảng điều khiển quản lý.</li>
+                    </ul>
+                </div>
+                <div class="p-8 bg-gray-100 rounded-2xl border-l-8 border-red-600 shadow-lg">
+                    <h3 class="text-2xl font-black mb-4 flex items-center gap-3">
+                        <i class="fas fa-globe text-red-600"></i> GLOBAL PRIORITY
+                    </h3>
+                    <ul class="space-y-3 text-sm text-gray-600">
+                        <li><i class="fas fa-check text-red-600 mr-2"></i> Sử dụng trên đại dương và đất liền toàn thế giới (<span class="font-bold text-gray-900">&ge;12 hải lý</span>)</li>
+                        <li><i class="fas fa-check text-red-600 mr-2"></i> Ưu tiên băng thông đi quốc tế.</li>
+                        <li><i class="fas fa-check text-red-600 mr-2"></i> Sử dụng ổn định tại chỗ và khi di chuyển.</li>
+                        <li><i class="fas fa-check text-red-600 mr-2"></i> Địa chỉ IP công cộng và bảng điều khiển quản lý.</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="price-table-container rounded-2xl overflow-hidden shadow-2xl">
+                <table class="price-table">
+                    <thead>
+                        <tr>
+                            <th>No.</th>
+                            <th>Pool Size</th>
+                            <th>Price Local (VNĐ)</th>
+                            <th>Price Global (VNĐ)</th>
+                        </tr>
+                    </thead>
+                    <tbody class="bg-white">
+                        <tr>
+                            <td>1</td>
+                            <td class="font-bold">10GB</td>
+                            <td class="font-bold text-gray-800">750.000</td>
+                            <td class="font-bold text-red-600">1.540.000</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td class="font-bold">25GB</td>
+                            <td class="font-bold text-gray-800">850.000</td>
+                            <td class="font-bold text-red-600">2.040.000</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td class="font-bold">50GB</td>
+                            <td class="font-bold text-gray-800">1.000.000</td>
+                            <td class="font-bold text-red-600">3.040.000</td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td class="font-bold">1TB</td>
+                            <td class="font-bold text-gray-800">7.500.000</td>
+                            <td class="font-bold text-red-600">39.800.000</td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td class="font-bold">2TB</td>
+                            <td class="font-bold text-gray-800">14.050.000</td>
+                            <td class="font-bold text-red-600">78.500.000</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <p class="mt-8 text-center text-sm text-gray-500 italic">
+                * Đây là mức giá dự kiến, đang trong quá trình đàm phán với đối tác để đưa ra gói cước tối ưu nhất cho khách hàng.
+            </p>
+        </div>
+    </section>
+
+<!-- Block 6: Dashboard Management -->
+    <section id="dashboard" class="py-24 px-6 bg-[#080d1a]">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-black uppercase mb-4 leading-tight">Ứng dụng quản trị <br><span class="text-red-600">By Viettel</span></h2>
+                <p class="text-gray-400 max-w-2xl mx-auto">Bộ công cụ mạnh mẽ giúp bạn giám sát và điều hành toàn bộ đội tàu mọi lúc, mọi nơi trên Website và Mobile App.</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <!-- Left: Giao diện quản trị -->
+                <div class="lg:w-full">
+                    <div class="image-glow overflow-hidden border border-white/10 group bg-[#111827] rounded-3xl">
+                        <img 
+                            src="https://cdn.phototourl.com/free/2026-05-04-735bfe2e-1036-4b5d-926d-5b92235f747b.png" 
+                            alt="[Giao diện quản trị hệ thống giao tiếp với Starlink by Viettel]" 
+                            class="w-full h-auto block transition duration-500 group-hover:scale-[1.02]"
+                        >
+                    </div>
+                </div>
+
+                <!-- Right: Content -->
+                <div class="space-y-8">
+                    <div class="flex gap-6">
+                        <div class="text-red-600 mt-1"><i class="fas fa-mobile-alt text-4xl"></i></div>
+                        <div>
+                            <h4 class="text-xl font-bold uppercase mb-2">Mobile App</h4>
+                            <p class="text-gray-400">Giám sát trạng thái kết nối, vị trí tàu và nhận cảnh báo tức thì ngay trên điện thoại di động.</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-6">
+                        <div class="text-cyan-400 mt-1"><i class="fas fa-desktop text-4xl"></i></div>
+                        <div>
+                            <h4 class="text-xl font-bold uppercase mb-2">Website Admin</h4>
+                            <p class="text-gray-400">Bộ công cụ quản trị tập trung dành cho doanh nghiệp: Quản lý thuê bao, xuất báo cáo lưu lượng và gia hạn hàng loạt.</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-6">
+                        <div class="text-green-400 mt-1"><i class="fas fa-map-marked-alt text-4xl"></i></div>
+                        <div>
+                            <h4 class="text-xl font-bold uppercase mb-2">Bản đồ trực tuyến</h4>
+                            <p class="text-gray-400">Theo dõi lộ trình chính xác của từng con tàu theo thời gian thực tích hợp với hệ thống Starlink.</p>
+                        </div>
+                    </div>
+                    <a href="#contact" class="inline-block px-8 py-3 border border-red-600 text-red-600 rounded font-bold hover:bg-red-600 hover:text-white transition text-center uppercase">Liên hệ tư vấn</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. Cam kết & Hỗ trợ (Trust) -->
+    <section id="contact" class="py-24 px-6 bg-red-600 text-white">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+            <div>
+                <h2 class="text-4xl font-black uppercase mb-8 italic">Đồng hành cùng ngư dân<br> tại mọi cửa biển</h2>
+                <div class="space-y-6">
+                    <div class="flex gap-4">
+                        <i class="fas fa-headset text-3xl"></i>
+                        <p class="font-bold">Hỗ trợ kỹ thuật 24/7: Đội ngũ chuyên gia Viettel luôn sẵn sàng.</p>
+                    </div>
+                    <div class="flex gap-4">
+                        <i class="fas fa-anchor text-3xl"></i>
+                        <p class="font-bold">Mạng lưới trạm cảng: Sẵn sàng thiết bị thay thế (RMA) tại Hải Phòng, Đà Nẵng, Vũng Tàu...</p>
+                    </div>
+                </div>
+            </div>
+            <div class="bg-white text-gray-900 p-10 rounded-2xl shadow-2xl">
+                <h3 class="text-2xl font-black mb-6 uppercase text-center">Liên hệ báo giá ưu đãi</h3>
+                <form class="space-y-4">
+                    <input type="text" placeholder="Họ tên chủ tàu/Doanh nghiệp" class="w-full p-4 border border-gray-200 rounded">
+                    <input type="tel" placeholder="Số điện thoại" class="w-full p-4 border border-gray-200 rounded">
+                    <input type="text" placeholder="Địa chỉ" class="w-full p-4 border border-gray-200 rounded">
+                    <input type="tel" placeholder="Email" class="w-full p-4 border border-gray-200 rounded">
+                    
+                    <button class="w-full btn-viettel text-white py-4 rounded font-black text-lg uppercase">Nhận tư vấn ngay</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- 8. Footer & FAQ -->
+    <section id="faq" class="py-24 px-6 bg-[#03070d]">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-3xl font-black text-center mb-12 uppercase">Giải đáp thắc mắc (FAQ)</h2>
+            <div class="space-y-4">
+                <div class="glass-card p-6 rounded-xl">
+                    <h4 class="font-bold text-lg mb-2 text-cyan-400">Gói Local và Global khác nhau thế nào?</h4>
+                    <p class="text-gray-400 text-sm">Gói Local tối ưu cho vùng biển gần bờ (&lt;12 hải lý) với chi phí thấp hơn. Gói Global cho phép bạn kết nối tại mọi vùng biển quốc tế (&ge;12 hải lý) không giới hạn biên giới.</p>
+                </div>
+                <div class="glass-card p-6 rounded-xl">
+                    <h4 class="font-bold text-lg mb-2 text-cyan-400">Dịch vụ có ổn định khi bão lớn không?</h4>
+                    <p class="text-gray-400 text-sm">Với thiết bị Gen 3 Performance, hệ thống có thể duy trì kết nối ngay cả khi tàu rung lắc mạnh hoặc trong điều kiện mây dày và mưa lớn.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-white pt-20 pb-10 border-t border-gray-200">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-12 mb-16">
+                <div class="col-span-2 space-y-6">
+                    <img src="https://rubee.com.vn/wp-content/uploads/2022/11/slogan-viettel-moi.png" class="h-20 brightness-100" alt="logo">
+                    <p class="text-gray-800 max-sm">
+                        Đơn vị tiên phong mang Internet vệ tinh Starlink về Việt Nam, cung cấp giải pháp kết nối cho chuyển đổi số vùng cao và hàng hải.
+                    </p>
+                    <div class="flex gap-4">
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center hover:bg-red-600 hover:text-white transition-colors text-gray-600"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center hover:bg-red-600 hover:text-white transition-colors text-gray-600"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center hover:bg-red-600 hover:text-white transition-colors text-gray-600"><i class="fas fa-globe"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-6 uppercase text-sm text-gray-900">Dịch vụ</h4>
+                    <ul class="space-y-3 text-sm text-gray-600">
+                        <li><a href="#" class="hover:text-red-500">Internet Vệ tinh Cá nhân</a></li>
+                        <li><a href="#" class="hover:text-red-500">Giải pháp Hàng hải</a></li>
+                        <li><a href="#" class="hover:text-red-500">Dự phòng Doanh nghiệp</a></li>
+                        <li><a href="#" class="hover:text-red-500">Dịch vụ Managed Services</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-6 uppercase text-sm text-gray-900">Liên hệ</h4>
+                    <ul class="space-y-3 text-sm text-gray-600">
+                        <li><i class="fas fa-phone mr-2 text-red-600"></i> 1800 8000</li>
+                        <li><i class="fas fa-envelope mr-2 text-red-600"></i> starlink@viettel.com.vn</li>
+                        <li><i class="fas fa-map-marker-alt mr-2 text-red-600"></i> Số 1, Giang Văn Minh, Hà Nội</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="pt-8 border-t border-gray-200 text-center text-[10px] text-gray-400">
+                <p>© 2026 VIETTEL TELECOM - DỰ ÁN INTERNET VỆ TINH STARLINK.</p>
+                <p class="mt-2 text-gray-500">Đối tác vận hành chiến lược Starlink tại Việt Nam.</p>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- SOS Button -->
+    <div class="sos-button">
+        <a href="#contact" class="btn-viettel text-white px-6 py-4 rounded-full font-bold shadow-lg flex items-center gap-2">
+            <i class="fas fa-solid fa-headset"></i>
+            <span class="hidden md:inline uppercase">Liên hệ tư vấn</span>
+        </a>
+    </div>
+
+    <script>
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const targetId = this.getAttribute('href');
+                if (targetId !== "#" && targetId.startsWith("#")) {
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        e.preventDefault();
+                        targetElement.scrollIntoView({ behavior: 'smooth' });
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
