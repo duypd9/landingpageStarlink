@@ -118,6 +118,16 @@
             color: var(--neon-blue);
             font-weight: bold;
         }
+        
+        .card-glow {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+        .card-glow:hover {
+            border-color: rgba(238, 0, 51, 0.5);
+            background: rgba(255, 255, 255, 0.05);
+        }
     </style>
 </head>
 <body class="overflow-x-hidden">
@@ -153,8 +163,8 @@
                 Starlink <span class="text-red-600">BY VIETTEL</span>
             </h1>
             <p class="text-xl md:text-3xl font-light mb-4 text-gray-200">Internet Vệ Tinh Siêu Tốc</p>
-            <p class="text-lg text-gray-400 mb-10 max-w-2xl mx-auto whitespace-nowrap">
-                Kết nối không giới hạn địa hình. Tốc độ ổn định lên tới 220Mbp trong thời tiết khắc nghiệt.
+            <p class="text-lg text-gray-400 mb-10 max-w-2xl mx-auto text-center">
+                Kết nối không giới hạn địa hình. Internet tốc độ cao, ổn định lên tới 220Mbp trong thời tiết khắc nghiệt, độ trễ thấp mọi lúc, mọi nơi. Giải pháp tối ưu cho Giàn khoan, tàu viễn dương vùng sâu vùng xa, biên giới, hải đảo và dự phòng doanh nghiệp.
             </p>
             <div class="flex flex-col sm:flex-row justify-center gap-4">
                 <a href="#contact" class="btn-viettel px-8 py-4 rounded font-bold text-lg uppercase text-white">Liên hệ tư vấn</a>
@@ -262,7 +272,7 @@
                 <div class="h-1 w-24 bg-red-600 mx-auto mb-6"></div>
             </div>
             
-            <div class="price-table-container glass-card rounded-2xl overflow-hidden">
+            <div class="price-table-container glass-card rounded-2xl overflow-hidden mb-12">
                 <table class="price-table">
                     <thead>
                         <tr>
@@ -299,23 +309,68 @@
                 </table>
             </div>
             
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
-                <div class="p-6 bg-white/5 rounded-xl border border-white/10 text-center">
-                    <p class="text-xs uppercase text-gray-500 mb-2">Mini KIT - Sử dụng cho</p>
-                    <p class="font-bold">TÀU CÁ NHỎ</p>
-                    <p class="text-sm text-gray-400 mt-2">Dễ dàng lắp đặt, gọn nhẹ</p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">            
+                <!-- Package 1 -->
+                <div class="card-glow p-8 rounded-3xl relative overflow-hidden border-t-4 border-red-600">
+                    <div class="absolute top-0 right-0 p-4 opacity-10 text-6xl">
+                        <i class="fas fa-home"></i>
+                    </div>
+                    <h4 class="text-cyan-400 font-bold mb-2 uppercase text-xs tracking-widest">Cố định/ Cá nhân/ Tàu cá</h4>
+                    <h3 class="text-2xl font-bold mb-6">Mini Kit</h3>
+                    <ul class="space-y-4 mb-8 text-sm text-gray-400">
+                        <li><i class="fas fa-check text-green-500 mr-2"></i> Tốc độ: 100-300 Mbps</li>
+                        <li><i class="fas fa-check text-green-500 mr-2"></i> Độ trễ: 25-50 ms</li>
+                        <li><i class="fas fa-check text-green-500 mr-2"></i> Chịu nhiệt: -30°C đến 50°C</li>
+                        <li><i class="fas fa-check text-green-500 mr-2"></i> Chống nước: IP56</li>
+                    </ul>
+                    <div class="border-t border-white/10 pt-6 mt-6">
+                        <div class="text-3xl font-bold">12.000.000₫</div>
+                        <div class="text-gray-500 text-xs">Giá chỉ gồm bộ thiết bị</div>
+                    </div>
+                    <a href="#contact" class="w-full mt-6 py-3 rounded-xl btn-viettel font-bold transition-all text-center text-white block">Liên hệ tư vấn</a>
                 </div>
-                <div class="p-6 bg-white/5 rounded-xl border border-white/10 text-center">
-                    <p class="text-xs uppercase text-gray-500 mb-2">Standart kit - Sử dụng cho</p>
-                    <p class="font-bold text-cyan-400">KHU DU LỊCH/VEN BIỂN</p>
-                    <p class="text-sm text-gray-400 mt-2">Dùng cố định hoặc di động ven bờ</p>
+
+                <!-- Package 2 (Best Seller) -->
+                <div class="card-glow p-8 rounded-3xl relative overflow-hidden border-t-4 border-red-600 bg-gradient-to-b from-red-600/30 to-transparent">
+                    <div class="absolute top-0 right-0 p-4 opacity-10 text-6xl">
+                        <i class="fas fa-ship"></i>
+                    </div>
+                    <div class="bg-red-600 text-[10px] font-bold uppercase px-3 py-1 rounded-full absolute top-4 left-8">Best seller</div>
+                    <h4 class="text-cyan-400 font-bold mb-2 uppercase text-xs tracking-widest pt-6">Tàu cá/ Khu du lịch/ Vùng xa</h4>
+                    <h3 class="text-2xl font-bold mb-6">Standard Kit</h3>
+                    <ul class="space-y-4 mb-8 text-sm text-gray-400">
+                        <li><i class="fas fa-check text-green-500 mr-2"></i> Tốc độ: 150-450 Mbps</li>
+                        <li><i class="fas fa-check text-green-500 mr-2"></i> Góc nhìn rộng 140 độ</li>
+                        <li><i class="fas fa-check text-green-500 mr-2"></i> Chịu thời tiết khắc nghiệt</li>
+                        <li><i class="fas fa-check text-green-500 mr-2"></i> Phù hợp gắn trên tàu, xe</li>
+                    </ul>
+                    <div class="border-t border-white/10 pt-6 mt-6">
+                        <div class="text-3xl font-bold">12.500.000₫</div>
+                        <div class="text-gray-500 text-xs">Giá chỉ gồm bộ thiết bị</div>
+                    </div>
+                    <a href="#contact" class="w-full mt-6 py-3 rounded-xl btn-viettel font-bold transition-all text-center text-white block">Liên hệ tư vấn</a>
                 </div>
-                <div class="p-6 bg-white/5 rounded-xl border border-white/10 text-center">
-                    <p class="text-xs uppercase text-gray-500 mb-2">Performance Kit - Sử dụng cho</p>
-                    <p class="font-bold text-red-500">GIÀN KHOAN/VIỄN DƯƠNG</p>
-                    <p class="text-sm text-gray-400 mt-2">Ưu tiên băng thông cao nhất</p>
+
+                <!-- Package 3 -->
+                <div class="card-glow p-8 rounded-3xl relative overflow-hidden border-t-4 border-red-600">
+                    <div class="absolute top-0 right-0 p-4 opacity-10 text-6xl">
+                        <i class="fas fa-building"></i>
+                    </div>
+                    <h4 class="text-cyan-400 font-bold mb-2 uppercase text-xs tracking-widest">Giàn khoan/ Tàu viễn dương</h4>
+                    <h3 class="text-2xl font-bold mb-6">Performance Kit</h3>
+                    <ul class="space-y-4 mb-8 text-sm text-gray-400">
+                        <li><i class="fas fa-check text-green-500 mr-2"></i> Băng thông ưu tiên cao nhất</li>
+                        <li><i class="fas fa-check text-green-500 mr-2"></i> IP tĩnh (Tùy chọn)</li>
+                        <li><i class="fas fa-check text-green-500 mr-2"></i> Hỗ trợ doanh nghiệp 24/7</li>
+                        <li><i class="fas fa-check text-green-500 mr-2"></i> Dashboard quản trị riêng</li>
+                    </ul>
+                    <div class="border-t border-white/10 pt-6 mt-6">
+                        <div class="text-3xl font-bold">60.990.000₫</div>
+                        <div class="text-gray-500 text-xs">Giá chỉ gồm bộ thiết bị</div>
+                    </div>
+                    <a href="#contact" class="w-full mt-6 py-3 rounded-xl btn-viettel font-bold transition-all text-center text-white block">Liên hệ tư vấn</a>
                 </div>
-            </div>
+            </div>  
         </div>
     </section>
 
@@ -445,15 +500,14 @@
                             <p class="text-gray-400">Theo dõi lộ trình chính xác của từng con tàu theo thời gian thực tích hợp với hệ thống Starlink.</p>
                         </div>
                     </div>
-                    <a href="#contact" class="inline-block px-8 py-3 border border-red-600 text-red-600 rounded font-bold hover:bg-red-600 hover:text-white transition text-center uppercase">Liên hệ tư vấn</a>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- 7. Cam kết & Hỗ trợ (Trust) -->
-    <section id="contact" class="py-24 px-6 bg-red-600 text-white">
-        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+    <section id="contact" class="py-24 px-6 bg-gradient-to-b from-red-600/40 to-transparent text-white">
+        <div class=" max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
             <div>
                 <h2 class="text-4xl font-black uppercase mb-8 italic">Đồng hành cùng ngư dân<br> tại mọi cửa biển</h2>
                 <div class="space-y-6">
@@ -470,12 +524,20 @@
             <div class="bg-white text-gray-900 p-10 rounded-2xl shadow-2xl">
                 <h3 class="text-2xl font-black mb-6 uppercase text-center">Liên hệ báo giá ưu đãi</h3>
                 <form class="space-y-4">
-                    <input type="text" placeholder="Họ tên chủ tàu/Doanh nghiệp" class="w-full p-4 border border-gray-200 rounded">
-                    <input type="tel" placeholder="Số điện thoại" class="w-full p-4 border border-gray-200 rounded">
+                    <input type="text" placeholder="Họ tên chủ tàu/Doanh nghiệp" class="w-full p-4 border border-gray-200 rounded" required>
+                    <input type="tel" placeholder="Số điện thoại" class="w-full p-4 border border-gray-200 rounded" required>
                     <input type="text" placeholder="Địa chỉ" class="w-full p-4 border border-gray-200 rounded">
-                    <input type="tel" placeholder="Email" class="w-full p-4 border border-gray-200 rounded">
+                    <input type="email" placeholder="Email" class="w-full p-4 border border-gray-200 rounded">
                     
-                    <button class="w-full btn-viettel text-white py-4 rounded font-black text-lg uppercase">Nhận tư vấn ngay</button>
+                    <!-- Phần Checkbox mới được cập nhật -->
+                    <div class="flex items-start gap-3 py-2 px-1">
+                        <input type="checkbox" id="privacy-policy" name="privacy-policy" class="mt-1 h-4 w-4 rounded border-gray-300 text-red-600 focus:ring-red-500" required>
+                        <label for="privacy-policy" class="text-sm text-gray-600 cursor-pointer select-none leading-tight">
+                            Tôi đã đọc và xác nhận <a href="#" class="text-red-600 underline hover:no-underline">Chính sách bảo vệ dữ liệu cá nhân</a>
+                        </label>
+                    </div>
+
+                    <button type="submit" class="w-full btn-viettel text-white py-4 rounded font-black text-lg uppercase">Nhận tư vấn ngay</button>
                 </form>
             </div>
         </div>
